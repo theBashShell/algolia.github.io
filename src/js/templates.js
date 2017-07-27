@@ -17,7 +17,7 @@ exports.hitTemplate = (data) => `
         </div>
         <p class="alg-communityhit__type text-demi text-sm m-t-none m-b-none padder">${data.category}</p>
         <a href="${data.url_home || data.url_github || data.url_forum}" class="hit-namelink"><h3 class="alg-communityhit__name text-lg padder m-t-none m-b-small">${data.name}</h3></a>
-        <p class="alg-communityhit__description text-sm m-t-none padder m-b">${escape(data.description)}</p>
+        <p class="alg-communityhit__description text-sm m-t-none padder m-b">${data.description}</p>
         <div class="alg-communityhit__stats">
           ${data.url_github ? `
            <div class="alg-communitystat alg-communitystat--github">
@@ -75,12 +75,12 @@ exports.headerTemplate = (category, viewMore) => {
 
   return `<header class="alg-header-${category.toLowerCase().split(" ").join("-")}">
     <div>
-      <a href="#${category.split(' ').join('').toLowerCase()}"> 
+      <a href="#${category.split(' ').join('').toLowerCase()}">
         <h3 class="alg-communityprojects__hitstype text-xl">
         ${category}
         ${displayShowMore ? `<a class="alg-viewmore text-sm" href="">SEE ${viewMore} MORE<svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><use xlink:href="#icon-arrow"></use></svg></a>` : ""}</h3>
       </a>
-      <p class="alg-communityprojects__hitsdesc">${ '' }</p> 
+      <p class="alg-communityprojects__hitsdesc">${ '' }</p>
   </header>
   <div class="ais-hits"></div>`;
 }
